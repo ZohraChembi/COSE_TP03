@@ -1,0 +1,39 @@
+services:
+  # Database Service - SQL Server
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: cose-tp03-db
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Your_password123
+    volumes:
+      - sql_data:/var/opt/mssql
+    networks:
+      - cose-tp03-network
+    restart: unless-stopped
+
+  # Backend API
+  order-service-api:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: -api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=db;Database=IhjezlyDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;Encrypt=False;
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    networks:
+      - cose-tp03-network
+    restart: unless-stopped
+
+
+
+networks:
+  cose-tp03-network:
+    driver: bridge
+
+volumes:
+  sql_data:
