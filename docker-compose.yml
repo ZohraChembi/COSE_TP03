@@ -15,9 +15,9 @@ services:
   # Backend API
   order-service-api:
     build:
-      context: ./Backend
+      context: ./Backend/OrderService
       dockerfile: Dockerfile
-    container_name: -api
+    container_name: OrderService-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
       - ConnectionStrings__DefaultConnection=Server=db;Database=IhjezlyDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;Encrypt=False;
