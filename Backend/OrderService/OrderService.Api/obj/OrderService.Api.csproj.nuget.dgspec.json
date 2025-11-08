@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zahra\\source\\repos\\COSE_TP03\\OrderService\\OrderService.Api\\OrderService.Api.csproj": {}
+    "C:\\Users\\DELL\\Backend-workspace\\COSE_TP03\\Backend\\OrderService\\OrderService.Api\\OrderService.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zahra\\source\\repos\\COSE_TP03\\OrderService\\OrderService.Api\\OrderService.Api.csproj": {
+    "C:\\Users\\DELL\\Backend-workspace\\COSE_TP03\\Backend\\OrderService\\OrderService.Api\\OrderService.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zahra\\source\\repos\\COSE_TP03\\OrderService\\OrderService.Api\\OrderService.Api.csproj",
+        "projectUniqueName": "C:\\Users\\DELL\\Backend-workspace\\COSE_TP03\\Backend\\OrderService\\OrderService.Api\\OrderService.Api.csproj",
         "projectName": "OrderService.Api",
-        "projectPath": "C:\\Users\\zahra\\source\\repos\\COSE_TP03\\OrderService\\OrderService.Api\\OrderService.Api.csproj",
-        "packagesPath": "C:\\Users\\zahra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zahra\\source\\repos\\COSE_TP03\\OrderService\\OrderService.Api\\obj\\",
+        "projectPath": "C:\\Users\\DELL\\Backend-workspace\\COSE_TP03\\Backend\\OrderService\\OrderService.Api\\OrderService.Api.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DELL\\Backend-workspace\\COSE_TP03\\Backend\\OrderService\\OrderService.Api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\zahra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

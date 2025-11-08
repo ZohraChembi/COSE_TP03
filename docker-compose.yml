@@ -15,12 +15,12 @@ services:
   # Backend API
   order-service-api:
     build:
-      context: ./Backend
+      context: ./Backend/OrderService
       dockerfile: Dockerfile
-    container_name: -api
+    container_name: order-service-api
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - ConnectionStrings__DefaultConnection=Server=db;Database=IhjezlyDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;Encrypt=False;
+      - ConnectionStrings__DefaultConnection=Server=db;Database=order-service-db;User Id=sa;Password=Your_password123;TrustServerCertificate=True;Encrypt=False;
     depends_on:
       - db
     ports:
@@ -28,6 +28,22 @@ services:
     networks:
       - cose-tp03-network
     restart: unless-stopped
+
+  costumer-service-api:
+     build:
+      context: ./Backend/CostumerService
+      dockerfile: Dockerfile
+     container_name: costumer-service-api
+     environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DefaultConnection=Server=db;Database=costumer-service-db;User Id=sa;Password=Your_password123;TrustServerCertificate=True;Encrypt=False;
+     depends_on:
+      - db
+     ports:
+      - "5001:5001"
+     networks:
+      - cose-tp03-network
+     restart: unless-stopped
 
 
 
