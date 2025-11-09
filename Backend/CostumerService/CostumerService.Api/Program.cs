@@ -1,9 +1,9 @@
 using CostumerService.Api.Data;
 using CostumerService.Api.Models;
 using CostumerService.Api.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -33,8 +33,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// Use IdentityCore (for API / JWT)
-// Use IdentityCore (for API / JWT)
+
 builder.Services.AddIdentityCore<User>(options =>
 {
     options.SignIn.RequireConfirmedAccount = false;
@@ -44,18 +43,17 @@ builder.Services.AddIdentityCore<User>(options =>
 .AddEntityFrameworkStores<ApplicationDbContext>()
 .AddDefaultTokenProviders();
 
-//  Register application services
 builder.Services.AddScoped<IUserService, UserService>();
 
 builder.Services.AddControllers()
     .AddNewtonsoftJson();
 
-// Controllers + Swagger
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    // Add JWT Bearer auth to Swagger UI
+   
     c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         In = Microsoft.OpenApi.Models.ParameterLocation.Header,
@@ -83,7 +81,6 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 
-//  CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -94,20 +91,17 @@ builder.Services.AddCors(options =>
     });
 });
 
-//  Database
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
-//  Middleware order
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
-//app.UseHttpsRedirection();
+
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
